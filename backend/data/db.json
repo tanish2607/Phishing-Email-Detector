@@ -1,0 +1,126 @@
+{
+  "analysis_results": [
+    {
+      "_id": "9044b7c7-9b13-4af0-b85a-9a810911bdc7",
+      "user_id": null,
+      "email_subject": "Critical security action needed",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 50,
+      "explanation_tree": [
+        {
+          "reason": "Suspicious Hyperlink",
+          "detail": "Link leads to an unverified external landing page containing keyword credentials redirects: http://192.168.1.1/login",
+          "confidence": 0.92
+        },
+        {
+          "reason": "Missing Security Signatures",
+          "detail": "The email does not contain valid SPF, DKIM, or DMARC authentication signatures.",
+          "confidence": 0.75
+        }
+      ],
+      "llm_explanation": "PhishShield AI has completed its analysis. The message is classified as **SUSPICIOUS** with a risk score of **50/100** (using fallback local heuristic).\n\n### Breakdown of Security Triggers:\n- **Suspicious Hyperlink**: Link leads to an unverified external landing page containing keyword credentials redirects: http://192.168.1.1/login *(Confidence: 92%)*\n- **Missing Security Signatures**: The email does not contain valid SPF, DKIM, or DMARC authentication signatures. *(Confidence: 75%)*\n\n**Recommendation:** Do not submit any credentials or click links. Check with the sender via a trusted separate channel.",
+      "raw_headers": {},
+      "created_at": "2026-07-06T15:33:15.858Z"
+    },
+    {
+      "_id": "a1fef673-0955-4a67-ac73-a7da0d5f52a3",
+      "user_id": null,
+      "email_subject": "Critical security action needed",
+      "verdict": "PHISHING",
+      "risk_score": 78,
+      "explanation_tree": [
+        {
+          "reason": "Suspicious URL Detected",
+          "detail": "The link 'http://192.168.1.1/login' is flagged as malicious: URL uses raw IP address instead of a domain name.",
+          "confidence": 0.95
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **PHISHING / MALICIOUS** with a risk score of **78/100**.\n\n### Key Findings:\n- **Suspicious URL Detected**: The link 'http://192.168.1.1/login' is flagged as malicious: URL uses raw IP address instead of a domain name. *(Confidence: 95%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-06T15:34:28.840Z"
+    },
+    {
+      "_id": "9e720fa1-87b7-4e0c-b04b-a2677ba6540c",
+      "user_id": null,
+      "email_subject": "URGENT: Your PayPal account has been restricted!",
+      "verdict": "PHISHING",
+      "risk_score": 97,
+      "explanation_tree": [
+        {
+          "reason": "Suspicious URL Detected",
+          "detail": "The link 'http://192.168.4.21/paypal-security/login.php' is flagged as malicious: URL uses raw IP address instead of a domain name.",
+          "confidence": 0.95
+        },
+        {
+          "reason": "High Urgency Sentiment",
+          "detail": "The email language attempts to coerce immediate actions under threat of account suspension.",
+          "confidence": 0.8
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **PHISHING / MALICIOUS** with a risk score of **97/100**.\n\n### Key Findings:\n- **Suspicious URL Detected**: The link 'http://192.168.4.21/paypal-security/login.php' is flagged as malicious: URL uses raw IP address instead of a domain name. *(Confidence: 95%)*\n- **High Urgency Sentiment**: The email language attempts to coerce immediate actions under threat of account suspension. *(Confidence: 80%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-06T15:38:51.674Z"
+    },
+    {
+      "_id": "fc42760e-17dc-439d-9f3e-dda13ce9d7c4",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "PHISHING",
+      "risk_score": 88,
+      "explanation_tree": [
+        {
+          "reason": "Suspicious URL Detected",
+          "detail": "The link 'https://secure-account-verify.example/verify`' is flagged as suspicious: URL contains suspicious redirection or keywords: verify",
+          "confidence": 0.8
+        },
+        {
+          "reason": "High Urgency Sentiment",
+          "detail": "The email language attempts to coerce immediate actions under threat of account suspension.",
+          "confidence": 0.8
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **PHISHING / MALICIOUS** with a risk score of **88/100**.\n\n### Key Findings:\n- **Suspicious URL Detected**: The link 'https://secure-account-verify.example/verify`' is flagged as suspicious: URL contains suspicious redirection or keywords: verify *(Confidence: 80%)*\n- **High Urgency Sentiment**: The email language attempts to coerce immediate actions under threat of account suspension. *(Confidence: 80%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-06T15:40:51.128Z"
+    },
+    {
+      "_id": "092a926d-d162-4f17-a214-eae5a0be3e23",
+      "user_id": null,
+      "email_subject": "Immediate Action Required: Verify Your Account Within 24 Hours",
+      "verdict": "PHISHING",
+      "risk_score": 88,
+      "explanation_tree": [
+        {
+          "reason": "Suspicious URL Detected",
+          "detail": "The link 'https://secure-account-verify.example/verify`' is flagged as suspicious: URL contains suspicious redirection or keywords: verify",
+          "confidence": 0.8
+        },
+        {
+          "reason": "High Urgency Sentiment",
+          "detail": "The email language attempts to coerce immediate actions under threat of account suspension.",
+          "confidence": 0.8
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **PHISHING / MALICIOUS** with a risk score of **88/100**.\n\n### Key Findings:\n- **Suspicious URL Detected**: The link 'https://secure-account-verify.example/verify`' is flagged as suspicious: URL contains suspicious redirection or keywords: verify *(Confidence: 80%)*\n- **High Urgency Sentiment**: The email language attempts to coerce immediate actions under threat of account suspension. *(Confidence: 80%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-06T15:51:35.582Z"
+    },
+    {
+      "_id": "15c3107e-d230-4619-bcd6-c47be828e89f",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 43,
+      "explanation_tree": [
+        {
+          "reason": "No Security Anomalies Detected",
+          "detail": "Authentication headers passed and the message content contains standard business patterns.",
+          "confidence": 0.85
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **43/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-06T16:02:06.421Z"
+    }
+  ]
+}

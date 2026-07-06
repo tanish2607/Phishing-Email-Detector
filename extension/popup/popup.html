@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishShield AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header -->
+    <header class="glass-panel">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <h1>PhishShield <span>AI</span></h1>
+      </div>
+      <div class="status-indicator">
+        <span class="dot online"></span>
+        <span>Backend Connected</span>
+      </div>
+    </header>
+
+    <!-- Main Input Section -->
+    <main id="input-section">
+      <div class="input-wrapper">
+        <textarea id="email-input" placeholder="Paste email content or headers here to scan..."></textarea>
+      </div>
+      <button id="scan-btn" class="primary-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        Analyze Content
+      </button>
+    </main>
+
+    <!-- Loading Section -->
+    <section id="loading-section" class="hidden">
+      <div class="loader">
+        <div class="spinner"></div>
+        <p>Agentic AI Analyzing...</p>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p id="progress-text" class="progress-text">0% Complete</p>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-section" class="hidden">
+      <div class="glass-panel result-card">
+        <div class="result-header">
+          <div class="score-circle" id="risk-score">
+            <span>0</span>
+          </div>
+          <div class="verdict-info">
+            <h2>Verdict</h2>
+            <h1 id="verdict-text">SAFE</h1>
+          </div>
+        </div>
+        
+        <div class="explanation-box" id="llm-explanation">
+          <!-- LLM Explanation will go here -->
+        </div>
+
+        <div class="details-list" id="details-list">
+          <!-- Breakdown items go here -->
+        </div>
+        
+        <button id="reset-btn" class="secondary-btn">New Scan</button>
+      </div>
+    </section>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
