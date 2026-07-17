@@ -121,6 +121,196 @@
       "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **43/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
       "raw_headers": {},
       "created_at": "2026-07-06T16:02:06.421Z"
+    },
+    {
+      "_id": "57443957-0439-4b0a-8f4a-050196e52553",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 57,
+      "explanation_tree": [
+        {
+          "reason": "No Security Anomalies Detected",
+          "detail": "Authentication headers passed and the message content contains standard business patterns.",
+          "confidence": 0.85
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **57/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-07T05:14:51.903Z"
+    },
+    {
+      "_id": "57f06c85-4694-42a5-b73c-db18f115337e",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 57,
+      "explanation_tree": [
+        {
+          "reason": "No Security Anomalies Detected",
+          "detail": "Authentication headers passed and the message content contains standard business patterns.",
+          "confidence": 0.85
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **57/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-07T05:16:22.426Z"
+    },
+    {
+      "_id": "a147d591-3d83-465b-8fdd-01c97d37055f",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 57,
+      "explanation_tree": [
+        {
+          "reason": "No Security Anomalies Detected",
+          "detail": "Authentication headers passed and the message content contains standard business patterns.",
+          "confidence": 0.85
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **57/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-07T05:25:57.769Z"
+    },
+    {
+      "_id": "76e2c877-c689-420d-b1bf-7e3a64bc72da",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 48,
+      "explanation_tree": [
+        {
+          "reason": "No Security Anomalies Detected",
+          "detail": "Authentication headers passed and the message content contains standard business patterns.",
+          "confidence": 0.85
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **48/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-07T05:26:15.913Z"
+    },
+    {
+      "_id": "929d58d9-d8e6-4819-9a14-fd314c36020e",
+      "user_id": null,
+      "email_subject": "No Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 55,
+      "explanation_tree": [
+        {
+          "reason": "No Security Anomalies Detected",
+          "detail": "Authentication headers passed and the message content contains standard business patterns.",
+          "confidence": 0.85
+        }
+      ],
+      "llm_explanation": "PhishShield AI has classified this email as **SUSPICIOUS** with a risk score of **55/100**.\n\n### Key Findings:\n- **No Security Anomalies Detected**: Authentication headers passed and the message content contains standard business patterns. *(Confidence: 85%)*\n\n**Analyst Recommendation:** Do not click on any links, download attachments, or reply to this sender. Block the sender and report this email to your organization's IT security team.",
+      "raw_headers": {},
+      "created_at": "2026-07-07T14:14:12.961Z"
+    },
+    {
+      "_id": "12d7b719-e93e-4d06-8424-a00adb86b47e",
+      "user_id": null,
+      "email_subject": "Unknown Subject",
+      "verdict": "PROMO",
+      "risk_score": 30,
+      "explanation_tree": [
+        {
+          "reason": "Missing Security Signatures",
+          "detail": "The email does not contain valid SPF, DKIM, or DMARC authentication signatures.",
+          "confidence": 0.75
+        },
+        {
+          "reason": "Promotional Content Detected",
+          "detail": "The email contains marketing keywords commonly associated with newsletters or promotional campaigns.",
+          "confidence": 0.9
+        }
+      ],
+      "llm_explanation": "PhishShield AI has completed its analysis. The message is classified as **PROMO** with a risk score of **30/100** (using fallback local heuristic).\n\n### Breakdown of Security Triggers:\n- **Missing Security Signatures**: The email does not contain valid SPF, DKIM, or DMARC authentication signatures. *(Confidence: 75%)*\n- **Promotional Content Detected**: The email contains marketing keywords commonly associated with newsletters or promotional campaigns. *(Confidence: 90%)*\n\n**Recommendation:** Do not submit any credentials or click links. Check with the sender via a trusted separate channel.",
+      "raw_headers": {},
+      "created_at": "2026-07-17T03:57:13.584Z"
+    },
+    {
+      "_id": "546b5e79-23c3-46c2-b979-568a09168948",
+      "user_id": null,
+      "email_subject": "Unknown Subject",
+      "verdict": "SAFE",
+      "risk_score": 25,
+      "explanation_tree": [
+        {
+          "reason": "Missing Security Signatures",
+          "detail": "The email does not contain valid SPF, DKIM, or DMARC authentication signatures.",
+          "confidence": 0.75
+        }
+      ],
+      "llm_explanation": "PhishShield AI has completed its analysis. The message is classified as **SAFE** with a risk score of **25/100** (using fallback local heuristic).\n\n### Breakdown of Security Triggers:\n- **Missing Security Signatures**: The email does not contain valid SPF, DKIM, or DMARC authentication signatures. *(Confidence: 75%)*\n\n**Recommendation:** Do not submit any credentials or click links. Check with the sender via a trusted separate channel.",
+      "raw_headers": {},
+      "created_at": "2026-07-17T03:58:50.072Z"
+    },
+    {
+      "_id": "2a678b65-14ad-40ae-980f-4d7da043b4dc",
+      "user_id": null,
+      "email_subject": "Unknown Subject",
+      "verdict": "SUSPICIOUS",
+      "risk_score": 50,
+      "explanation_tree": [
+        {
+          "reason": "Urgency Language Detected",
+          "detail": "The email copy requests immediate action to avoid account restrictions or suspension.",
+          "confidence": 0.85
+        },
+        {
+          "reason": "Missing Security Signatures",
+          "detail": "The email does not contain valid SPF, DKIM, or DMARC authentication signatures.",
+          "confidence": 0.75
+        },
+        {
+          "reason": "Promotional Content Detected",
+          "detail": "The email contains marketing keywords commonly associated with newsletters or promotional campaigns.",
+          "confidence": 0.9
+        }
+      ],
+      "llm_explanation": "PhishShield AI has completed its analysis. The message is classified as **SUSPICIOUS** with a risk score of **50/100** (using fallback local heuristic).\n\n### Breakdown of Security Triggers:\n- **Urgency Language Detected**: The email copy requests immediate action to avoid account restrictions or suspension. *(Confidence: 85%)*\n- **Missing Security Signatures**: The email does not contain valid SPF, DKIM, or DMARC authentication signatures. *(Confidence: 75%)*\n- **Promotional Content Detected**: The email contains marketing keywords commonly associated with newsletters or promotional campaigns. *(Confidence: 90%)*\n\n**Recommendation:** Do not submit any credentials or click links. Check with the sender via a trusted separate channel.",
+      "raw_headers": {},
+      "created_at": "2026-07-17T09:41:53.623Z"
+    },
+    {
+      "_id": "ef7a1731-c081-46cb-ae00-4777a76bf4ba",
+      "user_id": null,
+      "email_subject": "Unknown Subject",
+      "verdict": "SAFE",
+      "risk_score": 25,
+      "explanation_tree": [
+        {
+          "reason": "Missing Security Signatures",
+          "detail": "The email does not contain valid SPF, DKIM, or DMARC authentication signatures.",
+          "confidence": 0.75
+        }
+      ],
+      "llm_explanation": "PhishShield AI has completed its analysis. The message is classified as **SAFE** with a risk score of **25/100** (using fallback local heuristic).\n\n### Breakdown of Security Triggers:\n- **Missing Security Signatures**: The email does not contain valid SPF, DKIM, or DMARC authentication signatures. *(Confidence: 75%)*\n\n**Recommendation:** Do not submit any credentials or click links. Check with the sender via a trusted separate channel.",
+      "raw_headers": {},
+      "created_at": "2026-07-17T09:42:09.291Z"
+    },
+    {
+      "_id": "f5bc1797-30b3-4783-ad9b-463bb3d556cd",
+      "user_id": null,
+      "email_subject": "Unknown Subject",
+      "verdict": "PROMO",
+      "risk_score": 30,
+      "explanation_tree": [
+        {
+          "reason": "Missing Security Signatures",
+          "detail": "The email does not contain valid SPF, DKIM, or DMARC authentication signatures.",
+          "confidence": 0.75
+        },
+        {
+          "reason": "Promotional Content Detected",
+          "detail": "The email contains marketing keywords commonly associated with newsletters or promotional campaigns.",
+          "confidence": 0.9
+        }
+      ],
+      "llm_explanation": "PhishShield AI has completed its analysis. The message is classified as **PROMO** with a risk score of **30/100** (using fallback local heuristic).\n\n### Breakdown of Security Triggers:\n- **Missing Security Signatures**: The email does not contain valid SPF, DKIM, or DMARC authentication signatures. *(Confidence: 75%)*\n- **Promotional Content Detected**: The email contains marketing keywords commonly associated with newsletters or promotional campaigns. *(Confidence: 90%)*\n\n**Recommendation:** Do not submit any credentials or click links. Check with the sender via a trusted separate channel.",
+      "raw_headers": {},
+      "created_at": "2026-07-17T09:42:21.658Z"
     }
   ]
 }

@@ -1,11 +1,18 @@
 require('dotenv').config();
+
+const OpenAI = require("openai");
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');
+
 const { connectDB, AnalysisResult } = require('./models');
 const { initQueue, getQueue, jobEvents } = require('./queue');
 const { initWorker } = require('./worker');
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const app = express();
 app.use(cors());
@@ -59,7 +66,7 @@ app.post('/api/v1/scan/paste', async (req, res) => {
     // Add job to BullMQ / In-Memory Queue
     const job = await queue.add('analyze-email', { raw_email });
     console.log(`[Server] Created job ID: ${job.id}`);
-    
+
     // Return 202 Accepted per spec
     res.status(202).json({ job_id: job.id });
   } catch (err) {
@@ -83,11 +90,29 @@ app.post('/api/v1/ai/chat', async (req, res) => {
 
     let chatReply;
     try {
-      const response = await axios.post(`${process.env.AI_SERVICE_URL || 'http://localhost:8000'}/api/v1/chat`, {
-        analysis_context: record,
-        query: query
-      }, { timeout: 5000 });
-      chatReply = response.data.reply;
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4.1-mini",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a cybersecurity expert who explains phishing analysis in simple language."
+          },
+          {
+            role: "user",
+            content: `
+Email Analysis:
+${JSON.stringify(record, null, 2)}
+
+User Question:
+${query}
+`
+          }
+        ],
+        temperature: 0.2
+      });
+
+      chatReply = completion.choices[0].message.content;
     } catch (apiError) {
       chatReply = generateMockChatReply(record, query);
     }
@@ -100,11 +125,11 @@ app.post('/api/v1/ai/chat', async (req, res) => {
 
 function generateMockChatReply(record, query) {
   const q = query.toLowerCase();
-  
+
   if (q.includes('why') || q.includes('reason') || q.includes('suspicious')) {
     let reply = `Based on the forensic scan of this email, the threat score is ${record.risk_score}/100. The key flags are:\n\n`;
     record.explanation_tree.forEach((t, i) => {
-      reply += `${i+1}. **${t.reason}**: ${t.detail} (Confidence: ${Math.round(t.confidence * 100)}%)\n`;
+      reply += `${i + 1}. **${t.reason}**: ${t.detail} (Confidence: ${Math.round(t.confidence * 100)}%)\n`;
     });
     if (record.risk_score > 70) {
       reply += `\nThis critical combination indicates a high probability of credential phishing.`;
@@ -113,12 +138,12 @@ function generateMockChatReply(record, query) {
     }
     return reply;
   }
-  
+
   if (q.includes('link') || q.includes('url') || q.includes('href')) {
     const urls = record.explanation_tree.filter(t => t.reason.toLowerCase().includes('url') || t.reason.toLowerCase().includes('link'));
     if (urls.length > 0) {
-      return `The email contains links that match phishing signatures:\n\n` + 
-        urls.map(u => `- **${u.reason}**: ${u.detail}`).join('\n') + 
+      return `The email contains links that match phishing signatures:\n\n` +
+        urls.map(u => `- **${u.reason}**: ${u.detail}`).join('\n') +
         `\n\nWe advise against clicking them as they may lead to spoofed credential harvesting portals.`;
     } else {
       return `No highly suspicious links were flagged, but there could be hidden trackers. Always inspect URLs manually before clicking.`;
@@ -128,8 +153,8 @@ function generateMockChatReply(record, query) {
   if (q.includes('spf') || q.includes('dmarc') || q.includes('auth') || q.includes('dkim')) {
     const authList = record.explanation_tree.filter(t => t.reason.toLowerCase().includes('auth') || t.reason.toLowerCase().includes('spf') || t.reason.toLowerCase().includes('dmarc'));
     if (authList.length > 0) {
-      return `The email failed critical sender authentication checks:\n\n` + 
-        authList.map(a => `- **${a.reason}**: ${a.detail}`).join('\n') + 
+      return `The email failed critical sender authentication checks:\n\n` +
+        authList.map(a => `- **${a.reason}**: ${a.detail}`).join('\n') +
         `\n\nThis means the sender's identity cannot be cryptographically verified.`;
     } else {
       return `The basic SPF/DKIM/DMARC headers appear to align, but this does not rule out compromised sender accounts or lookalike domain impersonation.`;
